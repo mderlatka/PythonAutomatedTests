@@ -6,5 +6,5 @@ Feature: Test navigation between pages
 
   Scenario: Teach Online page can go to Homepage
     Given I am on the Teach Online page with "english" language set
-    When I click on the 'Logo site' element
+    When I click on the 'logo site' element
     Then I should be on the home page
