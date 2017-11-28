@@ -1,7 +1,7 @@
 from PageObject import urlconfigs
 from behave import *
-from PageObject.Objects.HomePage import HomePage
-from selenium import webdriver
+
+
 
 @given('I am on the home page with "{language}" language set')
 def main_page(context, language=None):
@@ -20,6 +20,16 @@ def main_page(context, language=None):
 
     print("Navigating to the site: {}".format(full_url))
 
-    context.driver.get(full_url) #???? driver
+    context.driver.get(full_url)
 
 #------------------------------------------------------#
+
+@then('I should be on the Teach Online page')
+def on_each_online_page(context):
+    expected_url = context.teach_online_page.url()
+    assert expected_url == context.driver.current_url
+
+@then('I should be on the home page')
+def on_each_online_page(context):
+    expected_url = context.home_page.url()
+    assert expected_url == context.driver.current_url
