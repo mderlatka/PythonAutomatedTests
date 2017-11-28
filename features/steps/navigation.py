@@ -24,7 +24,7 @@ def main_page(context, language=None):
 #------------------------------------------------------#
 
 
-@given('I am on the Teach Online page with "english" language set')
+@given('I am on the Teach Online page with "{language}" language set')
 def teach_online_site(context, language=None):
     available_languages = urlconfigs.URL_LANG_CONFIG.keys()
     if language not in available_languages:
@@ -46,10 +46,13 @@ def teach_online_site(context, language=None):
 @then('I should be on the Teach Online page')
 def on_each_online_page(context):
     expected_url = context.teach_online_page.url()
-    assert expected_url == context.driver.current_url
+    actual_url = context.driver.current_url
+    print("Expected url is {}, while actual is {}".format(expected_url, actual_url))
+    assert expected_url == actual_url
+
 
 
 @then('I should be on the home page')
-def on_each_online_page(context):
+def on_homepage(context):
     expected_url = context.home_page.url()
     assert expected_url == context.driver.current_url
