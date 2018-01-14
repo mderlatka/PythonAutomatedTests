@@ -1,9 +1,6 @@
 import time
 from PageObject.Elements.CommonElements import CommonElements
 from PageObject.Elements.BasePageElements import BasePageElements
-from selenium import webdriver
-
-
 
 class BasePage(CommonElements):
 

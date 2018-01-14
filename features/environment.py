@@ -9,6 +9,5 @@ def before_all(context):
     context.base_page = BasePage(context)
     context.teach_online_page = TeachOnlinePage(context)
 
-
 def after_all(context):
     context.driver.close()
